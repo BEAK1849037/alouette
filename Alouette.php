@@ -1,5 +1,6 @@
 <?php
 class Alouette {
+
 	/** Méthode titre
 	 * Retourne le titre tel qu'affiché dans le head et le h1 de la page
 	 * @param string $oiseau - Le nom de l'oiseau (Alouette)
@@ -7,6 +8,13 @@ class Alouette {
 	 * @return string
 	 */
 
+	 public static function titre($oiseau, $qualite){
+		 $string = '.$oiseau.';
+		 $string .= ',';
+		 $string .= '.$qualite.';
+		 $string .= '.$oiseau.';
+		 return $string;
+	 }
 
 	/** Méthode chanson
 	 * Retourne la chanson au complet dans un div.chanson
@@ -81,6 +89,10 @@ class Alouette {
 	 * @uses appelReponse
 	 * @return string
 	 */
-
-
+	
+	public static function actionMembre($action,$membre){
+	$resultat = '<div class="appel">Je te '.$action.' la '.$membre.'</div>';
+	$resultat .= '<div class="reponse">Je te '.$action.' la '.$membre.'</div>';
+	return $resultat;
+	}
 }
